@@ -7,6 +7,7 @@
 
 #include "DHT.h"
 
+#define MSIGNAL 22
 #define DHTPIN 18  
 #define DHTTYPE DHT22  
 
@@ -58,13 +59,13 @@ void TaskMotor(void *pvParameters)  // This is a task.
   (void) pvParameters;
 
   // initialize digital LED_BUILTIN on pin 13 as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(MSIGNAL, OUTPUT);
 
   for (;;) // A Task shall never return or exit.
   {
-    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+    digitalWrite(MSIGNAL, HIGH);   // turn the LED on (HIGH is the voltage level)
     vTaskDelay(10000);  // one tick delay (15ms) in between reads for stability
-    digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+    digitalWrite(MSIGNAL, LOW);    // turn the LED off by making the voltage LOW
     vTaskDelay(10000);  // one tick delay (15ms) in between reads for stability
   }
 }
