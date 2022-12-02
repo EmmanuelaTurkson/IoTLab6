@@ -1,0 +1,85 @@
+
+<!DOCTYPE html><html><head>
+    <title>Midterm Project</title>
+    <style>
+        body { font-family:Arial}
+        body {font-size:20px; text-align:center; align-content: centers;}
+        #dbdata1{display: flex; justify-content: center;}
+        #dbdata2{display: flex; justify-content: center;}
+        table { border: 1px solid black; border-radius: 1em; padding: 1em;}
+        th {background-color: #4CAF50;}
+        td {padding: 1em; border: 1em;}
+        p {font-size:30px; margin-top:50px; margin-bottom:5px; align-content: center;}
+        div.sticky {
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+            .topnav {
+                position: sticky;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+    </style></head>
+    <body>
+        <div class="topnav sticky">
+            <a href="/IoT/PHP_101/lab6/index.html">Location 1</a>
+            <a href="/IoT/PHP_101/lab6/index2.html">Location 2</a>
+            <a href="/IoT/PHP_101/lab6/index3.html">All locations</a>
+          </div>
+    <h1>Temperature and Distance Operation for Location 1</h1>
+
+
+
+	<!-- <p> <a href="#" class="button"onclick='updateByAJAX_dbData(1)'>Fetch Readings for location 1</a></p> --> 
+	<p> <div id="dbdata1"></div></p>
+		
+
+	<script type="text/javascript">
+
+		
+			const xhttp=new XMLHttpRequest();
+			
+            xhttp.onload=function(){
+                console.log(this.responseText);
+                    document.getElementById("dbdata"+1).innerHTML=this.responseText;
+                    
+			}
+			
+			xhttp.open("GET", "retrieve.php?LocationID="+  1);
+            xhttp.send();
+		
+
+	</script>
+  </body></html>
