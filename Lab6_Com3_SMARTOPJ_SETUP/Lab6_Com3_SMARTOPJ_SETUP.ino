@@ -16,7 +16,7 @@
 DHT dht(DHTPIN, DHTTYPE);
 EasyUltrasonic ultrasonic; // Create the ultrasonic object
 // define two tasks for Blink & AnalogRead
-void TaskBlink( void *pvParameters );
+void TaskReadUltrasonic( void *pvParameters );
 void TaskReadDHT22( void *pvParameters );
 
 // the setup function runs once when you press reset or power the board
